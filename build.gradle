@@ -2,9 +2,6 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '4.1.1'
 	id 'io.spring.dependency-management' version '1.1.7'
-	id 'com.netflix.dgs.codegen' version '8.3.0'
-	id 'org.hibernate.orm' version '7.4.5.Final'
-	id 'org.graalvm.buildtools.native' version '1.1.8'
 }
 
 group = 'com.example'
@@ -27,7 +24,6 @@ repositories {
 }
 
 dependencies {
-<<<<<<< Updated upstream
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-session-data-redis'
 	compileOnly 'org.projectlombok:lombok'
@@ -42,37 +38,11 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
-generateJava {
-	schemaPaths = ["${projectDir}/src/main/resources/graphql-client"]
-	packageName = 'com.example.bond_finance.codegen'
-	generateClient = true
-}
+    implementation 'org.springframework.boot:spring-boot-starter-batch-jdbc'
 
 hibernate {
 	enhancement {
 	}
-=======
-    // 1. Spring Batch
-    implementation 'org.springframework.boot:spring-boot-starter-batch'
-    testImplementation 'org.springframework.boot:spring-boot-starter-batch-test'
-
-    // 2. 외부 API 호출용 (WebClient / WebFlux)
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
-
-    // 3. Database 및 JPA
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    
-    // MySQL Connector
-    runtimeOnly 'com.mysql:mysql-connector-j'
-
-    // 4. Utility (Lombok)
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-
-    // 5. Test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
->>>>>>> Stashed changes
-}
 
 tasks.named('test') {
 	useJUnitPlatform()
