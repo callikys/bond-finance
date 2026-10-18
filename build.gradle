@@ -43,6 +43,7 @@ dependencies {
 hibernate {
 	enhancement {
 	}
+}
 
 tasks.named('test') {
 	useJUnitPlatform()
