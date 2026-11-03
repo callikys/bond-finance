@@ -38,3 +38,8 @@ out/
 
 
 application.properties
+
+### spiring batch 기초 실습용 파일 ###
+bonds.csv
+numbers.txt
+NumberJobConfig.java
